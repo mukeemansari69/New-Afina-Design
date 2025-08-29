@@ -34,3 +34,23 @@ document.querySelectorAll(".video-wrapper").forEach(wrapper => {
   });
 });
 
+
+
+/* #############################################################################  Why clorine seation ##################################### */
+
+//----------------------> Accordion logic 
+
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const faqItem = button.parentElement;
+    const faqContainer = faqItem.parentElement;
+
+    // Close other items
+    faqContainer.querySelectorAll(".faq-item").forEach(item => {
+      if (item !== faqItem) item.classList.remove("active");
+    });
+
+    // Toggle current
+    faqItem.classList.toggle("active");
+  });
+});
