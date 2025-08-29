@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Daily Section</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=IvyMode:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Font CSS -->
+  <link rel="stylesheet" href="font/stylesheet.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+     <!-- #############################################################################  Daily seaction ####################################### -->
+      
+<section class="daily-section">
+    <!-- Left Content -->
+    <div class="daily-left">
+        <div class="daily-left-content">
+            <!-- Badge -->
+            <div class="daily-badge">
+                <div class="daily-badge-images">
+                    <img src="assets/Ellipse 1.svg" alt="Customer">
+                    <img src="assets/Ellipse 2.svg" alt="Customer">
+                    <img src="assets/Ellipse 3.svg" alt="Customer">
+                    <img src="assets/Ellipse 4.svg" alt="Customer">
+                </div>
+                <div class="daily-badge-text">150,000+ HAPPY CUSTOMERS</div>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="daily-heading">
+                Your Daily Hair & Skincare Routine Starts Here...
+            </h1>
+
+            <!-- Description -->
+            <p class="daily-desc">
+               Your shower should care for your skin and hair—not strip them dry.Are you still rinsing in chlorine? Afina filters it out, giving you cleaner water and a naturally healthier you.
+            </p>
+
+            <!-- Button -->
+            <a href="#" class="daily-button">
+                Shop Afina Now
+                <img src="assets\Icon.svg" alt="Arrow">
+            </a>
+        </div>
+    </div>
+
+    <!-- Right Side -->
+   <div class="daily-right">
+    <div class=" mobile-badge">
+        <div class="daily-badge-images">
+            <img src="assets/Ellipse 1.svg" alt="Customer">
+            <img src="assets/Ellipse 2.svg" alt="Customer">
+            <img src="assets/Ellipse 3.svg" alt="Customer">
+            <img src="assets/Ellipse 4.svg" alt="Customer">
+        </div>
+        <div class="daily-badge-text">150,000+ HAPPY CUSTOMERS</div>
+    </div>
+    <img src="assets/shower-image.png" alt="Shower">
+</div>
+
+</section>
+
+<!-- ################################################################## marque seaction ################################################################# -->
+
+<section class="my-skin py-4">
+  <div class="marquee-container">
+    <div class="marquee-track">
+      
+      <!-- Card 1 -->
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+          "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+
+      <!-- Card 2 -->
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+          "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+
+      <!-- Card 3 -->
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+         "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+
+      <!-- repeat cards as needed -->
+
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+          "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+
+      <!-- Card 2 -->
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+          "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+
+      <!-- Card 3 -->
+      <div class="my-skin-card text-center">
+        <p class="my-skin-text">
+         "My skin feels softer, and my hair is no longer frizzy. I’ll never go back to a regular showerhead"r, and my hair is no longer frizzy. I’ll never go back to a regular s
+        </p>
+        <img src="./assets/marq-1.svg" alt="logo" class="my-skin-logo mx-auto">
+      </div>
+      
+
+
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>
+
+
+
+
+.daily-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+   
+}
+
+/* Left & Right Layout */
+.daily-left,
+.daily-right {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* relative padding */
+}
+
+/* Content container */
+.daily-left-content {
+    width: 100%;
+    max-width: 696px;
+    display: flex;
+    flex-direction: column;
+    gap:7px;
+}
+
+/* Badge styling */
+.daily-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: #0B55930A;
+    max-width: 337px;
+}
+
+.daily-badge-images {
+    display: flex;
+}
+
+.daily-badge-images img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.daily-badge-images {
+    display: flex;
+}
+
+.daily-badge-images img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    /* white border for clean overlap */
+    margin-left: -8px; /* overlap effect */
+}
+
+.daily-badge-images img:first-child {
+    margin-left: 0; /* first image normal position */
+}
+
+
+.daily-badge-text {
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #000;
+    font-family: Poppins;
+}
+
+/* Heading */
+.daily-heading {
+   font-family: 'Ivy Mode';
+font-weight: 600;
+max-width: 562px;
+font-size: 48px;
+
+line-height: 112.99999999999999%;
+letter-spacing: 0;
+
+    color: #000;
+    margin-bottom: 17px;
+}
+
+/* Description */
+.daily-desc {
+   font-family: Poppins;
+font-weight: 400;
+max-width: 562px;
+font-size: 15px;
+line-height: 160%;
+letter-spacing: 0;
+
+}
+
+.daily-desc strong {
+    font-weight: 500;
+}
+
+/* Button */
+.daily-button {
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 2rem;
+    background: #FFFF00;
+    border-radius: 42px;
+    border: 1px solid #000;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    max-width: 280px;
+    justify-content: center;
+}
+
+.daily-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Right image */
+.daily-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* Hide mobile badge by default */
+.mobile-badge {
+    display: none;
+}
+
+
+/* ===== Mobile Layout ===== */
+@media (max-width: 1024px) {
+    .daily-section {
+        flex-direction: column-reverse;
+         padding-bottom: 24px;
+    }
+  .daily-badge{
+    display: none;
+  }
+    .daily-right {
+        border-left: none;
+    }
+
+    .daily-left,
+    .daily-right {
+        display: flex;
+        flex-direction: column;
+        
+    }
+     .mobile-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 12px 0 12px 0;
+        border-radius: 999px;
+        
+        
+       
+        position: relative;
+        z-index: 2; /* ensure it stays on top */
+    }
+
+    .mobile-badge .daily-badge-images {
+        display: flex;
+    }
+
+    .mobile-badge .daily-badge-images img {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: -8px;
+    }
+
+    .mobile-badge .daily-badge-images img:first-child {
+        margin-left: 0;
+    }
+
+    .mobile-badge .daily-badge-text {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: #000;
+    }
+}
+
+@media (max-width: 768px){
+    .daily-heading{
+        font-size: 32px;
+      text-align: center;
+      margin-top: 24px;
+
+    }
+   
+    .daily-desc{
+        font-size: 15px;
+        text-align: center;
+        padding: 0 15px 0 15px;
+        margin: 7px 0 7px 0;
+    }
+    .daily-button{
+        margin: 0 auto;
+    }
+    .daily-right img{
+        height: 326px;
+    }
+}
+
+
+@media (max-width: 480px){
+    .daily-button{
+        margin: 0 15px 0 15px;
+        max-width: 400px;
+        
+    }
+
+}
+
+
+/* ################################################################################################## marque seaction ################################################### */
+
+.my-skin {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 3rem; /* like your 129px gap */
+  animation: scroll-marquee 25s linear infinite;
+}
+
+.my-skin-card {
+  flex: 0 0 350px; /* responsive width instead of fixed 383px */
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+
+  transition: all 0.3s ease-in-out;
+}
+
+
+.my-skin-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.my-skin-logo {
+  max-width: 150px; /* responsive, replaces 149.8px */
+  height: auto;
+}
+
+
+
+/* ===== ADDITIONAL CSS FOR INFINITE MARQUEE ===== */
+
+/* 1. Track ko double width dena hoga */
+.marquee-track {
+  width: max-content; /* content jitna wide hoga utna hi track hoga */
+}
+
+/* 2. Infinite scrolling effect */
+@keyframes scroll-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* half move -> duplicate content lagega infinite */
+}
+
+
