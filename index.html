@@ -19,6 +19,36 @@
 </head>
 <body>
 
+<!-- #################################################################################### Top Header Countdown#################################################### -->
+ 
+<!-- Top Yellow Bar -->
+  <div class="header-top">
+    Shop 10% OFF with Code: <span>SAVE10</span>
+    <div id="countdown"></div>
+  </div>
+
+<!-- ###################################################################################### Main Header ########################################################## -->
+<header class="header-main">
+  <!-- Hamburger Menu -->
+  <button class="menu-toggle" id="menu-btn">&#9776;</button>
+
+  <!-- Navigation Links (Desktop + Mobile) -->
+  <ul class="nav-links" id="nav-menu">
+    <span class="nav-close" id="nav-close">✖</span>
+    <li><a href="#">Filter Showerhead</a></li>
+    <li><a href="#">Showerfilter</a></li>
+    
+  </ul>
+
+  <!-- Logo (Always Centered in Desktop, Left in Mobile) -->
+  <div class="logo">Afina</div>
+
+  <!-- Icons -->
+  <div class="header-icons">
+    <i class="message"><img src="./assets/user 1.svg" alt="user-icon"></i>
+    <i class="cart"><img src="./assets/bx-cart.svg.svg" alt="cart-icon"></i>
+  </div>
+</header>
 
      <!-- #############################################################################  Daily seaction ####################################### -->
 
@@ -48,10 +78,14 @@
             </p>
 
             <!-- Button -->
-            <a href="#" class="daily-button">
-                Shop Afina Now
-                <img src="assets\Icon.svg" alt="Arrow">
-            </a>
+            <a href="#" class="the-science-btn daily-btn">
+  SHOP AFINA NOW
+  <span class="the-science-btn-icon">
+    <svg viewBox="0 0 24 24" class="the-science-arrow">
+      <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </span>
+</a>
         </div>
     </div>
 
@@ -206,6 +240,8 @@
   <div class="row align-items-center justify-content-center g-4">
     
     <!-- Left Image -->
+     
+     <h2 class="shower-mobile-heading">Your Shower’s Glow Boost</h2>
     <div class="col-lg-5 col-md-12 text-center left-shower">
       <img src="./assets/shower-with-hand.png" alt="Shower Glow" class="img-fluid">
     </div>
@@ -259,10 +295,16 @@
       </div>
 
       <!-- Button -->
-      <a href="#" class="shower-glow-btn">
-        SHOP ALFINA NOW
-        <img src="./assets/Icon.svg" alt="Arrow">
-      </a>
+      
+ <a href="#" class="the-science-btn  shower-glow-btn">
+  SHOP AFINA NOW
+  <span class="the-science-btn-icon">
+    <svg viewBox="0 0 24 24" class="the-science-arrow">
+      <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </span>
+</a>
+
     </div>
   </div>
 </section>
@@ -321,10 +363,15 @@
     <div class="featured-product-left">
       <p class="featured-product-subtitle">Featured Products</p>
       <h2 class="featured-product-title">Transform Your Shower<br>With Afina</h2>
-      <a href="#" class="featured-product-shop-btn">
-        SHOP ALL
-        <span class="featured-product-shop-icon"><img src="./assets/Icon.svg" alt="icon"></span>
-      </a>
+
+       <a href="#" class="the-science-btn shopall">
+  SHOP ALL
+  <span class="the-science-btn-icon">
+    <svg viewBox="0 0 24 24" class="the-science-arrow">
+      <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </span>
+</a>
     </div>
 
     <!-- Right Side Cards -->
@@ -414,7 +461,14 @@
           Eczema, Rashes, Even Color Changes in Your Hair. The Very Issues We Spend Endless Time, 
           Money, And Care Trying To Fix Often Start Right Here.
         </p>
-        <a href="#" class="why-clorine-btn">SHOP AFINA NOW <img src="./assets/Icon.svg" alt="icon"></a>
+       <a href="#" class="the-science-btn">
+  SHOP AFINA NOW
+  <span class="the-science-btn-icon">
+    <svg viewBox="0 0 24 24" class="the-science-arrow">
+      <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </span>
+</a>
       </div>
 
       <!-- Accordion Section -->
@@ -449,6 +503,114 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<!-- ##############################################################################################   The Science Seaction ############################################# -->
+
+
+<section class="the-science">
+  <div class="the-science-container row">
+    
+    <!-- Left Content -->
+    <div class="the-science-left col-lg-6">
+      <h2>The Science Behind Afina</h2>
+      <p>Through rigorous testing of numerous showers and filters, we have meticulously crafted the Afina. Our research-backed filter is designed to enhance the health of your hair, skin, and overall well-being.</p>
+
+      <div class="the-science-accordion">
+        <!-- Item 1 -->
+        <div class="the-science-item active">
+          <div class="the-science-question">
+            <div class="the-science-question-left">
+              <div class="the-science-number">1</div>
+              <div class="the-science-question-text">The Water Problem</div>
+            </div>
+            <img src="./assets/plus-icon.svg" class="the-science-icon" alt="icon">
+          </div>
+          <div class="the-science-answer">
+            <p>In the majority of the United States, the primary source of tap water is surface water, sourced from lakes, rivers, and reservoirs. Most tap water carries unwanted substances — chlorine, heavy metals, pesticides, and bacteria — that damage your hair and skin over time.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="the-science-item">
+          <div class="the-science-question">
+            <div class="the-science-question-left">
+              <div class="the-science-number">2</div>
+              <div class="the-science-question-text">Hidden Contaminants</div>
+            </div>
+            <img src="./assets/plus-icon.svg" class="the-science-icon" alt="icon">
+          </div>
+          <div class="the-science-answer">
+            <p>Up to 98% of U.S. water systems add chlorine. While it keeps water safe to drink, it dries out your skin, fades hair color, and worsens irritation. Heavy metals, pesticides, organic compounds, and chlorine are among the common contaminants present in tap water.</p>
+          </div>
+        </div>
+
+        <!-- Add More Items -->
+        <div class="the-science-item">
+          <div class="the-science-question">
+            <div class="the-science-question-left">
+              <div class="the-science-number">3</div>
+              <div class="the-science-question-text">The Afina Filter</div>
+            </div>
+            <img src="./assets/plus-icon.svg" class="the-science-icon" alt="icon">
+          </div>
+          <div class="the-science-answer">
+            <p>Afina uses a proprietary filter blend, designed to be effective in hot showers, capable of removing 95% of chlorine, heavy metals, and other chemicals.</p>
+          </div>
+        </div>
+
+      <div class="the-science-item">
+          <div class="the-science-question">
+            <div class="the-science-question-left">
+              <div class="the-science-number">4</div>
+              <div class="the-science-question-text">How It Works?</div>
+            </div>
+            <img src="./assets/plus-icon.svg" class="the-science-icon" alt="icon">
+          </div>
+          <div class="the-science-answer">
+            <p>We have developed a unique combination of organic compounds that have been carefully selected to improve the efficiency of our filters. Through a patented Redox process, Afina neutralizes chlorine and heavy metals, leaving you with cleaner, healthier water for skin and hair.</p>
+          </div>
+        </div>
+       
+
+        <div class="the-science-item">
+          <div class="the-science-question">
+            <div class="the-science-question-left">
+              <div class="the-science-number">5</div>
+              <div class="the-science-question-text">Easy Replacement</div>
+            </div>
+            <img src="./assets/plus-icon.svg" class="the-science-icon" alt="icon">
+          </div>
+          <div class="the-science-answer">
+            <p>For best results, swap your filter every 2 months. Quick to replace, so your shower always delivers the same clean, skin-loving water. Heavy metals, pesticides, organic compounds, and chlorine are among the common contaminants present in tap water./p>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Button -->
+      <a href="#" class="the-science-btn">
+  SHOP AFINA NOW
+  <span class="the-science-btn-icon">
+    <svg viewBox="0 0 24 24" class="the-science-arrow">
+      <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </span>
+</a>
+
+
+    </div>
+
+    <!-- Right Video -->
+      <div class="the-science-right col-lg-6">
+  <video class="the-science-video" id="scienceVideo" 
+         src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+  <div class="the-science-play-btn" id="playBtn">
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </div>
+</div>
+
   </div>
 </section>
 

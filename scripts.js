@@ -1,3 +1,35 @@
+
+/* #######################################################  count down #################################### */
+ // ---------- Countdown Timer ----------
+    let countdownElement = document.getElementById("countdown");
+    let countdownTime = 5 * 60; // 5 minutes in seconds
+
+    function updateCountdown() {
+      let minutes = Math.floor(countdownTime / 60);
+      let seconds = countdownTime % 60;
+      countdownElement.textContent =
+        (minutes < 10 ? "0" : "") + minutes + ":" +
+        (seconds < 10 ? "0" : "") + seconds;
+
+      if (countdownTime > 0) countdownTime--;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+/* #############################################################  Mobile toggel ##################################### */
+
+const menuBtn = document.getElementById("menu-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const navClose = document.getElementById("nav-close");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.add("active");
+  });
+
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+
 /* ############################################# its NOt You Seaction Video #########################    */
 // 🎬 Video Hover Play/Pause + Controls + Button Toggle
 document.querySelectorAll(".video-wrapper").forEach(wrapper => {
@@ -54,3 +86,34 @@ document.querySelectorAll(".faq-question").forEach(button => {
     faqItem.classList.toggle("active");
   });
 });
+
+
+
+/* #####################################################################   the seince seaction ####################################################### */
+
+// Accordion Toggle
+  document.querySelectorAll(".the-science-item").forEach(item => {
+    item.querySelector(".the-science-question").addEventListener("click", () => {
+      document.querySelectorAll(".the-science-item").forEach(i => {
+        if (i !== item) i.classList.remove("active");
+      });
+      item.classList.toggle("active");
+    });
+  });
+
+  // Video Play/Pause
+  const video = document.getElementById("scienceVideo");
+  const playBtn = document.getElementById("playBtn");
+
+  playBtn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playBtn.classList.add("hide");
+    } else {
+      video.pause();
+      playBtn.classList.remove("hide");
+    }
+  });
+
+  video.addEventListener("pause", () => playBtn.classList.remove("hide"));
+  video.addEventListener("play", () => playBtn.classList.add("hide"));
