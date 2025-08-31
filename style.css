@@ -1765,8 +1765,6 @@ ul {
   font-family: "Ivy Mode", serif;
   font-weight: 600;
   font-size: 30px;
-  line-height: 100%;
-  text-transform: capitalize;
   color: #000;
 }
 
@@ -1778,7 +1776,6 @@ ul {
   background: #FFFF00;
   border: 1px solid #000;
   border-radius: 9999px;
-  font-family: Poppins, sans-serif;
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1786,19 +1783,20 @@ ul {
   text-decoration: none;
 }
 
-/* Carousel */
+/* Carousel Wrapper */
 .loved-carousel-wrapper {
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  overflow: hidden;
   height: 611px;
-  padding-bottom: 60px; /* arrows ke liye jagah */
+  overflow: hidden;
+  padding-bottom: 60px; /* arrows niche ke liye space */
 }
 
+/* Carousel */
 .loved-carousel {
   display: flex;
-  gap: 15px;
+  gap: 22px;
   transition: transform 0.4s ease-in-out;
   align-items: center;
   height: 100%;
@@ -1806,7 +1804,7 @@ ul {
 
 /* Card */
 .loved-card {
- width: 310px;
+  width: 310px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -1823,9 +1821,6 @@ ul {
 }
 
 /* Hover enlarge effect */
-.loved-card:hover {
-  transform: scale(1.05);
-}
 .loved-card:hover video {
   height: 505px;
 }
@@ -1841,10 +1836,6 @@ ul {
   border-radius: 12px;
 }
 
-.loved-carousel-wrapper,
-.loved-carousel {
-  overflow:hidden;
-}
 .loved-card-info img {
   width: 97px;
   height: 97px;
@@ -1852,15 +1843,10 @@ ul {
   object-fit: cover;
 }
 
-.loved-card-text {
-  flex: 1;
-}
-
 .loved-product-name {
   font-size: 14px;
   font-weight: 500;
   color: #000;
-  margin: 0 0 5px;
 }
 
 .loved-product-price {
@@ -1880,7 +1866,7 @@ ul {
   color: #000;
 }
 
-/* Arrows wrapper center bottom */
+/* Arrows wrapper niche center */
 .loved-arrows-wrapper {
   position: absolute;
   bottom: 10px;
@@ -1898,7 +1884,6 @@ ul {
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1920,7 +1905,7 @@ ul {
   }
 
   .loved-card {
-    width: 90%;
+    width: 80%;
     margin: auto;
     flex: 0 0 80%;
     scroll-snap-align: start;
