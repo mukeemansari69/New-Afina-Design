@@ -1019,13 +1019,6 @@ ul {
   width: 100%;
 }
 
-/* Left Content */
-/* 
-.featured-product-left {
-  flex: 1 1 300px;
-  max-width: 400px;
-}
- */
 .featured-product-subtitle {
   font-size: 15px;
   color: #737373;
@@ -1040,18 +1033,6 @@ ul {
   margin-bottom: 12px;
   line-height: 140%;
 }
-
-/* 
-.featured-product-shop-icon {
-  background: #000;
-  color: #fff;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 /* Right Content (Cards) */
 .featured-product-right {
@@ -1204,6 +1185,11 @@ ul {
 }
 
 
+
+
+/* ##############################################################  transForm Seaction swipper css################################### */
+
+
 /* ################################################################  Why clorine Seaction ################################################################ */
 
 .why-clorine {
@@ -1324,15 +1310,63 @@ ul {
   transform: rotate(180deg);
 }
 
+.why-clorine-mobile {
+  display: none;
+}
+
+.why-clorine-mobile-btn {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .why-clorine-container {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .why-clorine-image {
+    height: 400px;
+  }
+
+  .why-clorine {
+    padding: 24px 15px;
   }
 
   .why-clorine-header h2 {
-    font-size: 24px;
+    display: none;
   }
+
+  .why-clorine-mobile {
+    display: block;
+    font-family: Ivy Mode;
+    font-weight: 600;
+    color: #000000;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0;
+    margin-bottom: 0;
+
+  }
+
+  .why-clorine-content {
+    gap: 16px;
+  }
+
+  .why-clorine-btn {
+    display: none;
+  }
+
+  .why-clorine-mobile-btn {
+    display: flex;
+    max-width: 400px;
+    justify-content: space-between;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
 }
 
 
@@ -1353,6 +1387,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 68px;
+  overflow: hidden;
 
 }
 
@@ -1458,23 +1493,28 @@ ul {
 /* Right Side Video */
 .the-science-right {
   max-width: 679px;
-  max-height: 679px;
+
+  height: 100%;
   width: 100%;
-  height: auto;
   flex: 1 1 679px;
   position: relative;
   padding: 0;
+  flex-shrink: 0;
+  height: auto;
+
 }
 
 .the-science-video {
   width: 100%;
   height: 100%;
-  max-width: 679px;
-  max-height: 679px;
+  /*   max-width: 679px;
+  max-height: 679px; */
   object-fit: cover;
+  aspect-ratio: 16 / 9;
+  /* video ko shrink honay say rokta hai  */
   /* video ko crop/fit karega */
 
-  opacity: 1;
+
 }
 
 .the-science-play-btn {
@@ -1502,15 +1542,377 @@ ul {
   display: none;
 }
 
+.science-btn {
+  margin-top: 21px;
+}
+
+.the-science-mobile-heading {
+  display: none;
+}
+
 /* Responsive */
 @media(max-width: 992px) {
   .the-science-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 
   .the-science-left,
   .the-science-right {
     max-width: 100%;
+  }
+}
+
+@media (max-width : 780px) {
+  .the-science {
+    padding: 24px 15px;
+  }
+
+
+  .the-science-right {
+    flex: none;
+  }
+
+}
+
+
+
+/* ✅ Mobile Fix */
+@media (max-width: 768px) {
+  .the-science-right {
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  .the-science-video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    /* ✅ video safe rectangle rahe */
+  }
+  .the-science-container{
+    gap: 0;
+  }
+  .science-btn{
+  margin-top: 15px;
+  max-width: 400px;
+  justify-content: space-between;
+}
+}
+
+@media(max-width:425px) {
+  .the-science-mobile-heading {
+    display: block;
+    margin-bottom: 16px;
+    font-family: Ivy Mode;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #000;
+  }
+
+  .the-science-left h2 {
+    display: none;
+  }
+  .the-science-video{
+    height: 400px !important;
+    margin-bottom: 15px;
+  }
+  .the-science-play-btn{
+    height: 37px;
+    width: 37px;
+  }
+  .the-science-left{
+    padding-top: 0;
+    padding-bottom: 0;
+    flex: 1 1 0;
+  }
+.the-science-left p{
+  margin-bottom: 4px;
+}
+.the-science-question-text{
+  font-size: 15px;
+}
+
+}
+
+
+
+
+/* #################################################################################################  just seaction ########################### */
+
+
+/* Section Styles */
+.just-section {
+  background: #000;
+  padding: 16px 0px;
+  overflow: hidden;
+}
+
+.just-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Marquee Container */
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Moving Content */
+.marquee-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  animation: marquee 30s linear infinite; /* speed control */
+}
+
+/* Text Style */
+.marquee-inner span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Dot Style */
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+  line-height: 1;
+}
+/*################################################################ Blur for the marque seaction  */
+
+/* Sirf marquee ke andar blur overlay */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;  /* kitna blur chahiye uske hisaab se */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee {
+  position: relative; /* Important: so ::before & ::after stay inside marquee */
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #000 40%, rgba(0, 0, 0, 0));
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #000 40%, rgba(0, 0, 0, 0));
+}
+
+
+
+/* Keyframes for marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* shift by half (since duplicated) */
+}
+@media (max-width : 480px){
+  .marquee-inner span{
+    font-size: 28px;
+  }
+  .just-heading{
+    font-size: 20px;
+  }
+}
+
+
+
+/* ##################################################################################   loved video seaction #################################### */
+
+/* Section */
+.loved-section {
+  width: 100%;
+  padding: 80px 40px 60px;
+  font-family: Poppins, sans-serif;
+}
+
+/* Header */
+.loved-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 38px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loved-heading {
+  font-family: "Ivy Mode", serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.loved-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #FFFF00;
+  border: 1px solid #000;
+  border-radius: 9999px;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Carousel */
+.loved-carousel-wrapper {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.loved-carousel {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Card */
+.loved-card {
+  width: 310px;
+  flex-shrink: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.loved-card video {
+  width: 310px;
+  height: 390px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover enlarge effect */
+.loved-card:hover {
+  transform: scale(1.05);
+}
+.loved-card:hover video {
+  height: 505px;
+}
+
+/* Card Info */
+.loved-card-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.loved-card-info img {
+  width: 97px;
+  height: 97px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.loved-card-text {
+  flex: 1;
+}
+
+.loved-product-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 5px;
+}
+
+.loved-product-price {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #00000066;
+}
+
+.new-price {
+  color: #000;
+}
+
+/* Arrows */
+.loved-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loved-arrow.left {
+  left: 0;
+}
+.loved-arrow.right {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loved-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .loved-carousel {
+    gap: 10px;
+  }
+
+  .loved-card {
+    width: 90%;
+    margin: auto;
+  }
+
+  .loved-card video {
+    width: 100%;
   }
 }

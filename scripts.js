@@ -117,3 +117,23 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
   video.addEventListener("pause", () => playBtn.classList.remove("hide"));
   video.addEventListener("play", () => playBtn.classList.add("hide"));
+
+
+
+ /* #####################################################################  loved section video ####################################### */
+ const carousel = document.querySelector(".loved-carousel");
+const leftBtn = document.querySelector(".loved-arrow.left");
+const rightBtn = document.querySelector(".loved-arrow.right");
+
+let scrollAmount = 0;
+
+rightBtn.addEventListener("click", () => {
+  scrollAmount += 325; 
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+leftBtn.addEventListener("click", () => {
+  scrollAmount -= 325;
+  if (scrollAmount < 0) scrollAmount = 0;
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+});
