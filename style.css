@@ -1868,12 +1868,9 @@ ul {
 
 /* Arrows wrapper niche center */
 .loved-arrows-wrapper {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 12px;
+  justify-content: center;
 }
 
 .loved-arrow {
