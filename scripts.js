@@ -181,3 +181,15 @@ function slideHype(dir) {
   slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
 }
 
+
+
+/* ####################################  slick slider ################################################################## */
+
+$('.mobiletransform-slider').slick({
+  slidesToShow: 1.5  ,
+  slidesToScroll: 1,
+  infinite: false,
+  arrows: false,
+  dots: false,
+ variableWidth: true
+});
