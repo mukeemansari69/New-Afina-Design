@@ -126,14 +126,34 @@ const leftBtn = document.querySelector(".loved-arrow.left");
 const rightBtn = document.querySelector(".loved-arrow.right");
 
 let scrollAmount = 0;
+const cardWidth = 325; // ek card + gap
 
-rightBtn.addEventListener("click", () => {
-  scrollAmount += 325;
-  carousel.style.transform = `translateX(-${scrollAmount}px)`;
-});
+function updateCarousel() {
+  if (window.innerWidth >= 1024) {
+    rightBtn.addEventListener("click", moveRight);
+    leftBtn.addEventListener("click", moveLeft);
+  } else {
+    // touch mode -> reset transform
+    carousel.style.transform = "translateX(0)";
+    scrollAmount = 0;
+  }
+}
 
-leftBtn.addEventListener("click", () => {
-  scrollAmount -= 325;
-  if (scrollAmount < 0) scrollAmount = 0;
-  carousel.style.transform = `translateX(-${scrollAmount}px)`;
-});
+function moveRight() {
+  const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+  if (scrollAmount + cardWidth <= maxScroll) {
+    scrollAmount += cardWidth;
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+  }
+}
+
+function moveLeft() {
+  if (scrollAmount - cardWidth >= 0) {
+    scrollAmount -= cardWidth;
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+  }
+}
+
+window.addEventListener("resize", updateCarousel);
+updateCarousel();
+
