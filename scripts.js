@@ -157,3 +157,27 @@ function moveLeft() {
 window.addEventListener("resize", updateCarousel);
 updateCarousel();
 
+
+
+/* ################################################################## the hype cards seaction ######################################################################## */
+
+
+let currentSlide = 0;
+function slideHype(dir) {
+  const slider = document.getElementById("hypeSlider");
+  const cards = slider.children.length;
+
+  // Check how many cards per view
+  let cardsPerView = 3;
+  if (window.innerWidth <= 768) {
+    cardsPerView = 1.2; // Mobile partial cards
+  } else if (window.innerWidth <= 991) {
+    cardsPerView = 2;
+  }
+
+  const maxSlide = Math.ceil(cards - cardsPerView);
+  currentSlide = Math.min(Math.max(currentSlide + dir, 0), maxSlide);
+  const cardWidth = slider.querySelector(".hype-card").offsetWidth + 22; // card + gap
+  slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+}
+
