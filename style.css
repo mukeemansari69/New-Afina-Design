@@ -5,11 +5,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-
   max-width: 240px;
   padding: 13px 15px 12px 24px;
-  ;
-
   gap: 12px;
   border-radius: 9999px;
   background: #FFFF00;
@@ -32,14 +29,13 @@
   height: 26px;
   border-radius: 50%;
   background: #000;
-  transition: all 0.4s ease;
 }
 
 .the-science-arrow {
   width: 18.2px;
   height: 18.2px;
   color: #fff;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
   transform: rotate(-45deg);
 }
 
@@ -48,14 +44,18 @@
   background: #000;
   color: #fff;
 }
-
+.the-science-btn-icon{
+  color: white;
+}
 .the-science-btn:hover .the-science-btn-icon {
   background: #FFFF00;
+  transition: all 0.4s ease-in-out;
   transform: rotate(0deg);
 }
 
 .the-science-btn:hover .the-science-arrow {
   color: #000;
+    transition: all 0.4s ease-in-out;
   transform: rotate(0deg);
 }
 
@@ -127,7 +127,7 @@ ul {
   align-items: center;
   gap: 24px;
   font-family: Poppins;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -985,7 +985,11 @@ ul {
     /* ✅ wrap na ho */
   }
 }
-
+@media (max-width: 768px) and (min-width: 426px){
+  .quality-container{
+    max-width: 570px;
+  }
+}
 /* ✅ Tablet & Mobile (2 items per row) */
 @media (max-width: 768px) {
   .quality-item {
@@ -1176,7 +1180,14 @@ ul {
   justify-content: space-between;
   overflow: hidden;
 }
-
+.featured-product-hover-btn:hover {
+ background: #FFFF00;
+    transition: all 0.4s ease;
+}
+.featured-product-hover-btn:hover img{
+  transform: rotate(45deg);
+   transition: all 0.4s ease;
+}
 .featured-product-card:hover .featured-product-hover-btn {
   bottom: 0px;
 }
@@ -1735,6 +1746,21 @@ display: block;
   display: none;
 }
 
+@media(max-width: 1440px){
+  .the-science{
+    padding: 24px 15px;
+  }
+  
+  .the-science-container {
+    gap: 0;
+  }
+}
+@media (max-width: 1440px) and (min-width: 769px){
+.the-science-container {
+  justify-content: center;
+}
+}
+
 /* Responsive */
 @media(max-width: 992px) {
   .the-science-container {
@@ -1749,11 +1775,6 @@ display: block;
 }
 
 @media (max-width : 780px) {
-  .the-science {
-    padding: 24px 15px;
-  }
-
-
   .the-science-right {
     flex: none;
   }
@@ -1776,9 +1797,6 @@ display: block;
     /* ✅ video safe rectangle rahe */
   }
 
-  .the-science-container {
-    gap: 0;
-  }
 
   .science-btn {
     margin-top: 15px;
@@ -1972,7 +1990,6 @@ display: block;
   color: #000;
 }
 
-
 /* Carousel Wrapper */
 .loved-carousel-wrapper {
   position: relative;
@@ -1980,8 +1997,7 @@ display: block;
   margin: 0 auto;
   height: 611px;
   overflow: hidden;
-  padding-bottom: 60px;
-  /* arrows niche ke liye space */
+  padding-bottom: 60px; /* arrows niche ke liye space */
 }
 
 /* Carousel */
@@ -2077,27 +2093,27 @@ display: block;
   justify-content: center;
 }
 
-
 .mobile-loved-btn {
   display: none;
 }
 
-/* Responsive */
+/* ================== Responsive ================== */
 
-
+/* Tablet & Mobile */
 @media (max-width: 768px) {
   .loved-header {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+    margin-bottom: 0;
   }
 
   .loved-carousel {
+    display: flex;
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-   /*  -webkit-overflow-scrolling: touch; */
-
+    scroll-padding: 0 20%; /* center card ke side me thoda space */
   }
 
   .loved-carousel::-webkit-scrollbar {
@@ -2105,10 +2121,11 @@ display: block;
   }
 
   .loved-card {
+    flex: 0 0 34%;
     width: auto;
     margin: auto;
-    flex: 0 0 34%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease-in-out;
   }
 
   .loved-card video {
@@ -2116,7 +2133,21 @@ display: block;
     height: 390px;
   }
 
-  /* hide arrows on mobile */
+  /* side cards thoda chhota */
+  .loved-card:not(:nth-child(n)) {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  /* jo card center me hoga */
+  .loved-card:focus-within,
+  .loved-card:active,
+  .loved-card:target {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* hide arrows */
   .loved-arrows-wrapper {
     display: none;
   }
@@ -2128,16 +2159,15 @@ display: block;
   .loved-section {
     padding: 24px 0;
   }
-
 }
 
-@media(max-width :425px) {
+/* Small Mobile */
+@media (max-width: 425px) {
   .loved-btn {
     display: none;
   }
 
   .mobile-loved-btn {
-    display: block;
     display: flex;
     max-width: 400px;
     justify-content: space-between;
@@ -2161,12 +2191,14 @@ display: block;
   .loved-carousel-wrapper {
     height: 558px;
   }
+
   .loved-card-info img {
     width: 62px;
     height: 62px;
   }
+
   .loved-card:hover video {
-    height:450px ;
+    height: 450px;
   }
 }
 
@@ -2286,6 +2318,11 @@ display: block;
 @media (max-width: 991px) {
   .free-water-content {
     padding: 29px 15px;
+    gap: 0;
+  }
+  .water-btn{
+    max-width: 100%;
+    justify-content: space-between;
   }
 
   .free-water-form {
@@ -2536,6 +2573,13 @@ display: block;
     gap: 0px;
   }
 }
+
+
+
+
+
+
+
 
 
 /* ########################################################################################  experience Seaction ############################# */
@@ -2891,4 +2935,13 @@ display: block;
     max-width: 137px;
   }
 }
+
+
+
+
+
+
+
+
+
 

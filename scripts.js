@@ -132,18 +132,59 @@ document.addEventListener("DOMContentLoaded", () => {
 const carousel = document.querySelector(".loved-carousel");
 const leftBtn = document.querySelector(".loved-arrow.left");
 const rightBtn = document.querySelector(".loved-arrow.right");
+const lovedCards = document.querySelectorAll(".loved-card");
 
 let scrollAmount = 0;
 const cardWidth = 325; // ek card + gap
 
 function updateCarousel() {
   if (window.innerWidth >= 1024) {
+    // ✅ Desktop: button navigation active
     rightBtn.addEventListener("click", moveRight);
     leftBtn.addEventListener("click", moveLeft);
+
+    // reset position
+    carousel.style.overflowX = "hidden";
+    carousel.scrollLeft = 0;
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+
   } else {
-    // touch mode -> reset transform
+    // ✅ Mobile: swipe + auto-center
+    carousel.style.overflowX = "auto";
+    carousel.style.scrollSnapType = "x mandatory"; // optional smooth snap
     carousel.style.transform = "translateX(0)";
     scrollAmount = 0;
+
+    // scroll listener for auto-center
+    carousel.addEventListener("scroll", () => {
+      clearTimeout(carousel.scrollEndTimer);
+
+      carousel.scrollEndTimer = setTimeout(() => {
+        const carouselRect = carousel.getBoundingClientRect();
+        let closestCard = null;
+        let closestDistance = Infinity;
+
+        lovedCards.forEach(card => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const carouselCenter = carouselRect.left + carouselRect.width / 2;
+          const distance = Math.abs(carouselCenter - cardCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestCard = card;
+          }
+        });
+
+        if (closestCard) {
+          closestCard.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest"
+          });
+        }
+      }, 100); // swipe rukne ke 100ms baad
+    }, { passive: true });
   }
 }
 
@@ -167,7 +208,9 @@ updateCarousel();
 
 
 
+
 /* ################################################################## the hype cards seaction ######################################################################## */
+
 let currentSlide = 0;
 let startX = 0;
 let endX = 0;
