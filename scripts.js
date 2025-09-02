@@ -71,7 +71,6 @@ document.querySelectorAll(".video-wrapper").forEach(wrapper => {
 /* #############################################################################  Why clorine seation ##################################### */
 
 //----------------------> Accordion logic 
-
 document.querySelectorAll(".faq-question").forEach(button => {
   button.addEventListener("click", () => {
     const faqItem = button.parentElement;
@@ -85,6 +84,15 @@ document.querySelectorAll(".faq-question").forEach(button => {
     // Toggle current
     faqItem.classList.toggle("active");
   });
+});
+
+// ✅ Page load pe 3rd item open karo
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+  if (faqItems.length >= 3) {
+    faqItems.forEach(item => item.classList.remove("active")); // sab close
+    faqItems[2].classList.add("active"); // 3rd ko active karo (index 2)
+  }
 });
 
 
@@ -160,9 +168,10 @@ updateCarousel();
 
 
 /* ################################################################## the hype cards seaction ######################################################################## */
-
-
 let currentSlide = 0;
+let startX = 0;
+let endX = 0;
+
 function slideHype(dir) {
   const slider = document.getElementById("hypeSlider");
   const cards = slider.children.length;
@@ -177,13 +186,48 @@ function slideHype(dir) {
 
   const maxSlide = Math.ceil(cards - cardsPerView);
   currentSlide = Math.min(Math.max(currentSlide + dir, 0), maxSlide);
+
   const cardWidth = slider.querySelector(".hype-card").offsetWidth + 22; // card + gap
   slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
 }
 
+// ✅ Add swipe support for mobile
+const slider = document.getElementById("hypeSlider");
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+}, { passive: true });   // <-- passive mark
+
+slider.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+}, { passive: true });   // <-- passive mark
+
+function handleSwipe() {
+  const swipeDistance = endX - startX;
+
+  // Sensitivity threshold (minimum swipe distance)
+  const threshold = 50;
+
+  if (Math.abs(swipeDistance) > threshold) {
+    if (swipeDistance < 0) {
+      // swipe left → next slide
+      slideHype(1);
+    } else {
+      // swipe right → prev slide
+      slideHype(-1);
+    }
+  }
+}
 
 
 /* ####################################  slick slider ################################################################## */
+$('.mobiletransform-slider').on('init', function(event, slick){
+  // Slick ke touch events passive bana do
+  slick.$list[0].addEventListener('touchstart', () => {}, { passive: true });
+  slick.$list[0].addEventListener('touchmove', () => {}, { passive: true });
+  slick.$list[0].addEventListener('touchend', () => {}, { passive: true });
+});
 
 $('.mobiletransform-slider').slick({
   slidesToShow: 1.5,
@@ -191,5 +235,5 @@ $('.mobiletransform-slider').slick({
   infinite: false,
   arrows: false,
   dots: false,
- variableWidth: true
+  variableWidth: true
 });

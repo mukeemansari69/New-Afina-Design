@@ -388,11 +388,11 @@ ul {
   }
 
   .mobile-badge .daily-badge-images img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width:14px;
+    height: 14px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: -8px;
+    margin-left: -3px;
   }
 
   .mobile-badge .daily-badge-images img:first-child {
@@ -486,7 +486,6 @@ ul {
   padding: 20px 0;
   position: relative;
   /* overlay ke liye */
-
   border-top: 1px solid #0000001A;
 }
 
@@ -608,7 +607,7 @@ ul {
 }
 
 .water-heading {
-  font-family: Ivy Mode;
+  font-family: "Ivy Mode", sans-serif;
   font-weight: 600;
   font-size: 30px;
   line-height: 140%;
@@ -871,7 +870,7 @@ ul {
 
   .shower-mobile-heading {
     display: block;
-    font-family: Ivy Mode;
+    font-family: "Ivy Mode", sans-serif;
     font-weight: 600;
     text-align: center;
     font-size: 24px;
@@ -947,12 +946,10 @@ ul {
   align-items: center;
   gap: 12px;
   width: fit-content;
-  /* flex: 1 1 calc(25% - 24px); */
-  /* max-width: calc(25% - 24px); */
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.4;
   text-transform: capitalize;
   /* ✅ ab text wrap ho sakta hai */
@@ -1189,13 +1186,16 @@ ul {
 }
 
 .afina-hi {
+  color: #000;
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
   margin-bottom: 12px;
 }
 
-
+.featured-product-rating span{
+  font-size: 14.19px;
+}
 
 
 /* Responsive */
@@ -1284,7 +1284,7 @@ ul {
 .mobiletransform-rating {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 0px;
 }
 .mobiletransform-rating span {
   font-family: Poppins, sans-serif;
@@ -1343,9 +1343,6 @@ ul {
   width: 320px !important; /* 280px se increase */
 }
 
-
-
-
 .mobiletransform-btn:hover {
   background:  #FFFF00;
   transition: all 0.4s ease;
@@ -1364,7 +1361,7 @@ ul {
 .mobiletransform-section{
   display: none !important;
 }
-@media (max-width :768px){
+@media (max-width :1020px){
   .featured-product{
     display: none !important;
   }
@@ -1525,7 +1522,7 @@ ul {
 
   .why-clorine-mobile {
     display: block;
-    font-family: Ivy Mode;
+    font-family: "Ivy Mode", sans-serif;
     font-weight: 600;
     color: #000000;
     font-size: 24px;
@@ -1679,7 +1676,6 @@ ul {
 /* Right Side Video */
 .the-science-right {
   max-width: 679px;
-
   height: 100%;
   width: 100%;
   flex: 1 1 679px;
@@ -1687,6 +1683,7 @@ ul {
   padding: 0;
   flex-shrink: 0;
   height: auto;
+  align-self: flex-start;
 
 }
 
@@ -1699,7 +1696,9 @@ ul {
   aspect-ratio: 16 / 9;
   /* video ko shrink honay say rokta hai  */
   /* video ko crop/fit karega */
-
+max-width: 679px;
+height: 679px;
+display: block;
 
 }
 
@@ -1792,7 +1791,7 @@ ul {
   .the-science-mobile-heading {
     display: block;
     margin-bottom: 16px;
-    font-family: Ivy Mode;
+    font-family: "Ivy Mode", sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 140%;
@@ -2027,15 +2026,18 @@ ul {
 }
 
 .loved-card-info img {
-  width: 97px;
-  height: 97px;
+  width: 92px;
+  height: 92px;
   object-fit: cover;
+  border-radius: 8px;
+  background-color: rgba(234, 234, 234, 0.6); 
 }
 
 .loved-product-name {
   font-size: 14px;
   font-weight: 500;
   color: #000;
+  margin-bottom: 5px;
 }
 
 .loved-product-price {
@@ -2094,13 +2096,12 @@ ul {
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+   /*  -webkit-overflow-scrolling: touch; */
 
   }
 
   .loved-carousel::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari */
   }
 
   .loved-card {
@@ -2163,6 +2164,9 @@ ul {
   .loved-card-info img {
     width: 62px;
     height: 62px;
+  }
+  .loved-card:hover video {
+    height:450px ;
   }
 }
 
@@ -2317,7 +2321,9 @@ ul {
   .free-water-heading {
     font-size: 24px;
   }
-
+.free-water-input{
+  border-radius: 8px;
+}
 }
 
 
@@ -2581,7 +2587,7 @@ ul {
 /* Responsive */
 @media (max-width: 768px) {
   .experience-section {
-    min-height: auto;
+    min-height: 281px;
     padding: 36px 0px 42px 24px;
     text-align: center;
   }
