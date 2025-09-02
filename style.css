@@ -67,7 +67,7 @@
   text-align: center;
   padding: 8px 20px;
   font-family: Poppins;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   color: #FFFFFF;
@@ -78,7 +78,7 @@
 }
 
 .header-top span {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 
@@ -205,6 +205,12 @@ ul {
   .logo {
     margin-left: 10px;
     font-size: 24px;
+  }
+  .menu-toggle{
+    padding-right: 6px;
+  }
+  .header-main{
+    padding: 0 16px;
   }
 }
 
@@ -394,7 +400,7 @@ ul {
   }
 
   .mobile-badge .daily-badge-text {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: -0.04em;
     text-transform: uppercase;
@@ -424,6 +430,7 @@ ul {
     text-align: center;
     padding: 0 15px 0 15px;
     margin: 7px 0 7px 0;
+    
   }
 
   .daily-button {
@@ -463,7 +470,10 @@ ul {
     justify-content: space-between;
     max-width: 400px;
   }
-
+   .daily-desc{
+    width: 100%;
+    max-width: 400px;
+   }
 }
 
 /* ################################################################################################## marque seaction ################################################### */
@@ -476,6 +486,8 @@ ul {
   padding: 20px 0;
   position: relative;
   /* overlay ke liye */
+
+  border-top: 1px solid #0000001A;
 }
 
 .myskin-marquee {
@@ -517,6 +529,20 @@ ul {
 .myskin-card img {
   max-width: 150px;
   height: auto;
+}
+
+@media(max-width:425px){
+  .myskin-card p{
+    font-size: 12px;
+    max-width: 284px;
+    margin-bottom: 12px;
+  }
+  .myskin-card img{
+    max-width: 85.16px;
+  }
+  .myskin-track{
+    gap: 26px;
+  }
 }
 
 /* ############################################################ blur div ############# */
@@ -967,8 +993,8 @@ ul {
 @media (max-width: 768px) {
   .quality-item {
     font-size: 14px;
-    white-space: nowrap;
-    /* ✅ wrap na ho */
+    white-space: nowrap; /* ✅ wrap na ho */
+    gap: 5px;
   }
 
   .quality-icon img {
@@ -1316,19 +1342,38 @@ ul {
 .mobiletransform-card {
   width: 320px !important; /* 280px se increase */
 }
+
+
+
+
+.mobiletransform-btn:hover {
+  background:  #FFFF00;
+  transition: all 0.4s ease;
+  
+}
+
+.mobiletransform-btn:hover .mobiletransform-arrow {
+  transform: rotate(40deg);
+    transition: all 0.4s ease;
+}
+
+
+
+
+
 .mobiletransform-section{
-  display: none;
+  display: none !important;
 }
 @media (max-width :768px){
   .featured-product{
-    display: none;
+    display: none !important;
   }
   .mobiletransform-section{
-    display: block;
+    display: block !important;
   }
 }
 
-/* ##############################################################  transForm Seaction swipper css################################### */
+
 
 
 /* ################################################################  Why clorine Seaction ################################################################ */
@@ -1817,7 +1862,7 @@ ul {
 .marquee-inner {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 46px;
   animation: marquee 30s linear infinite;
   /* speed control */
 }
@@ -1825,8 +1870,8 @@ ul {
 /* Text Style */
 .marquee-inner span {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 32px;
+  font-weight: 500;
+  font-size: 24px;
   line-height: 24px;
   text-transform: uppercase;
   color: #fff;
@@ -1893,9 +1938,11 @@ ul {
 
 @media (max-width : 480px) {
   .marquee-inner span {
-    font-size: 24px;
+    font-size: 18px;
   }
-
+.marquee-inner{
+  gap: 24px;
+}
 }
 
 
